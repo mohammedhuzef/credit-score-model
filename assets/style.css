@@ -1,0 +1,434 @@
+/* ==========================================================================
+   CreditGuard — Neo-Brutalist Fintech Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-cream: #F7F3E8;
+  --pure-white: #FFFFFF;
+  --nb-black: #111111;
+  --nb-blue: #3B82F6;
+  --nb-purple: #8B5CF6;
+  --nb-green: #B6FF4A;
+  --nb-yellow: #FFD84D;
+  --nb-red: #FF6B5E;
+  --nb-gray-bg: #EAE6DB;
+  --nb-border-width: 3px;
+  --nb-shadow-offset: 6px;
+  --nb-radius: 4px;
+}
+
+/* Global resets for Streamlit main container */
+html, body, [data-testid="stAppViewContainer"], .main {
+  background-color: var(--bg-cream) !important;
+  color: var(--nb-black) !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-testid="stHeader"] {
+  background-color: transparent !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Archivo Black', sans-serif !important;
+  font-weight: 800 !important;
+  color: var(--nb-black) !important;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2.2rem !important;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.6rem !important;
+}
+
+h3 {
+  font-size: 1.25rem !important;
+}
+
+p, span, label {
+  color: var(--nb-black);
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+  background-color: #FFFDF8 !important;
+  border-right: 3px solid var(--nb-black) !important;
+  box-shadow: 4px 0px 0px var(--nb-black) !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdown"] h1,
+[data-testid="stSidebar"] [data-testid="stMarkdown"] h2,
+[data-testid="stSidebar"] [data-testid="stMarkdown"] h3 {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+/* Radio buttons inside sidebar */
+[data-testid="stSidebar"] .stRadio label {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label:hover {
+  background: var(--nb-yellow);
+  border: 2px solid var(--nb-black);
+}
+
+/* Neo-Brutalist Card Containers */
+.nb-card {
+  background: var(--pure-white);
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 22px;
+  margin-bottom: 24px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nb-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--nb-black);
+}
+
+.nb-card-yellow {
+  background: var(--nb-yellow);
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.nb-card-blue {
+  background: var(--nb-blue);
+  color: #FFFFFF !important;
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+.nb-card-blue * {
+  color: #FFFFFF !important;
+}
+
+.nb-card-green {
+  background: var(--nb-green);
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.nb-card-red {
+  background: var(--nb-red);
+  color: #FFFFFF !important;
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+.nb-card-red * {
+  color: #FFFFFF !important;
+}
+
+.nb-card-purple {
+  background: var(--nb-purple);
+  color: #FFFFFF !important;
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px var(--nb-black);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+.nb-card-purple * {
+  color: #FFFFFF !important;
+}
+
+/* KPI metric cards */
+.nb-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.nb-kpi-card {
+  background: var(--pure-white);
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px var(--nb-black);
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nb-kpi-card .kpi-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 8px;
+  border: 2px solid var(--nb-black);
+  border-radius: 3px;
+  background: var(--nb-yellow);
+  margin-bottom: 8px;
+}
+
+.nb-kpi-card .kpi-value {
+  font-family: 'Space Grotesk', 'Archivo Black', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--nb-black);
+}
+
+.nb-kpi-card .kpi-subtitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #555555;
+  margin-top: 4px;
+}
+
+/* Risk Badges */
+.nb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 6px 14px;
+  border: 2.5px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px var(--nb-black);
+}
+
+.nb-badge-low {
+  background: var(--nb-green);
+  color: #0B3D0B;
+}
+
+.nb-badge-mod {
+  background: var(--nb-yellow);
+  color: #593C00;
+}
+
+.nb-badge-high {
+  background: var(--nb-red);
+  color: #FFFFFF;
+}
+
+/* Callout cards */
+.nb-callout {
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px var(--nb-black);
+  padding: 16px 20px;
+  margin: 18px 0;
+  background: #FFFBEA;
+  border-left: 10px solid var(--nb-black);
+}
+
+.nb-disclaimer {
+  background: #FFFFFF;
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--nb-black);
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Primary Button Styling */
+.stButton > button {
+  background-color: var(--nb-yellow) !important;
+  color: var(--nb-black) !important;
+  border: 3px solid var(--nb-black) !important;
+  border-radius: 4px !important;
+  box-shadow: 5px 5px 0px var(--nb-black) !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 12px 24px !important;
+  cursor: pointer !important;
+  transition: all 0.12s ease-in-out !important;
+}
+
+.stButton > button:hover {
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 8px 8px 0px var(--nb-black) !important;
+  background-color: var(--nb-green) !important;
+  color: var(--nb-black) !important;
+}
+
+.stButton > button:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px var(--nb-black) !important;
+}
+
+/* Input Fields (Number, Text, Select, Sliders) */
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input {
+  background-color: #FFFFFF !important;
+  border: 2.5px solid var(--nb-black) !important;
+  border-radius: 4px !important;
+  box-shadow: 3px 3px 0px var(--nb-black) !important;
+  color: var(--nb-black) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  padding: 8px 12px !important;
+}
+
+[data-testid="stSelectbox"] > div > div {
+  background-color: #FFFFFF !important;
+  border: 2.5px solid var(--nb-black) !important;
+  border-radius: 4px !important;
+  box-shadow: 3px 3px 0px var(--nb-black) !important;
+  color: var(--nb-black) !important;
+  font-weight: 600 !important;
+}
+
+/* Streamlit Slider */
+[data-testid="stSlider"] [role="slider"] {
+  background-color: var(--nb-yellow) !important;
+  border: 2.5px solid var(--nb-black) !important;
+  box-shadow: 2px 2px 0px var(--nb-black) !important;
+}
+
+/* Neo-Brutalist Data Table */
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  border: 3px solid var(--nb-black);
+  box-shadow: 5px 5px 0px var(--nb-black);
+  background: #FFFFFF;
+}
+
+.nb-table th {
+  background-color: var(--nb-black);
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border: 1px solid var(--nb-black);
+  text-align: left;
+}
+
+.nb-table td {
+  padding: 10px 14px;
+  border: 1.5px solid var(--nb-black);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nb-table tr:nth-child(even) {
+  background-color: #FAF8F2;
+}
+
+.nb-table tr:hover {
+  background-color: #FFF3C4;
+}
+
+/* Hero Section */
+.nb-hero {
+  background: var(--pure-white);
+  border: 3px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 7px 7px 0px var(--nb-black);
+  padding: 30px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.nb-hero .hero-pill {
+  display: inline-block;
+  background: var(--nb-yellow);
+  border: 2px solid var(--nb-black);
+  box-shadow: 2px 2px 0px var(--nb-black);
+  padding: 4px 12px;
+  border-radius: 3px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+/* Form Grouping Container */
+.nb-form-group {
+  background: #FFFFFF;
+  border: 2.5px solid var(--nb-black);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px var(--nb-black);
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.nb-form-header {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2.5px solid var(--nb-black);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Risk Probability Display Card */
+.nb-risk-display {
+  text-align: center;
+  padding: 28px;
+  border: 3.5px solid var(--nb-black);
+  border-radius: 6px;
+  box-shadow: 7px 7px 0px var(--nb-black);
+  background: #FFFFFF;
+  margin: 20px 0;
+}
+
+.nb-risk-pct {
+  font-family: 'Space Grotesk', 'Archivo Black', sans-serif;
+  font-size: 4.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--nb-black);
+  margin: 12px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 1.7rem !important; }
+  .nb-risk-pct { font-size: 3rem; }
+  .nb-card, .nb-hero { padding: 16px; }
+  .nb-kpi-grid { grid-template-columns: 1fr; }
+}

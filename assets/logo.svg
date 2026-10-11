@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" width="400" height="90">
+  <defs>
+    <filter id="hard-shadow" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+        values="0 0 0 0 0.067
+                0 0 0 0 0.067
+                0 0 0 0 0.067
+                0 0 0 1 0" />
+      <feBlend in="SourceGraphic" in2="matrixOut" mode="normal" />
+    </filter>
+  </defs>
+
+  <!-- Hard shadow box for icon -->
+  <rect x="15" y="15" width="60" height="60" rx="4" fill="#111111" />
+  <!-- Main shield/card icon -->
+  <rect x="10" y="10" width="60" height="60" rx="4" fill="#B6FF4A" stroke="#111111" stroke-width="3.5" />
+  
+  <!-- Shield emblem inside icon -->
+  <path d="M 40 22 L 55 28 L 55 45 C 55 54 40 60 40 60 C 40 60 25 54 25 45 L 25 28 Z" 
+        fill="#FFD84D" stroke="#111111" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="40" cy="40" r="5" fill="#111111" />
+
+  <!-- Main Title -->
+  <text x="86" y="44" font-family="'Space Grotesk', 'Archivo Black', Arial Black, sans-serif" 
+        font-weight="900" font-size="28" fill="#111111" letter-spacing="1">CREDITGUARD</text>
+  
+  <!-- Badge Pill -->
+  <rect x="88" y="55" width="168" height="22" rx="3" fill="#3B82F6" stroke="#111111" stroke-width="2.5" />
+  <text x="96" y="70" font-family="'Space Grotesk', Inter, sans-serif" 
+        font-weight="800" font-size="11" fill="#FFFFFF" letter-spacing="0.8">AI DECISION SUPPORT</text>
+
+  <!-- Beta / Version Pill -->
+  <rect x="264" y="55" width="46" height="22" rx="3" fill="#FFD84D" stroke="#111111" stroke-width="2.5" />
+  <text x="272" y="70" font-family="'Space Grotesk', Inter, sans-serif" 
+        font-weight="800" font-size="11" fill="#111111" letter-spacing="0.5">v1.0</text>
+</svg>
